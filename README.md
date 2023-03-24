@@ -20,6 +20,10 @@
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This section describes the feature extraction techniques used to encode the text. 
+It is focused on the three components of text: 
+`(1) lexical
+(2) syntactic
+(3) semantic`
 
-* [![Next][Next.js]][Next-url]
+
