@@ -30,22 +30,12 @@ This stage may include:
 * Stemming: is a natural language processing technique that reduces a word to its base or root form, called the "stem". This is done by removing common suffixes or prefixes from a word.
 * Lemmatization: is a natural language processing technique that involves reducing a word to its base or dictionary form, called the "lemma". Unlike stemming, lemmatization takes into account the context and the part of speech of the word to ensure that the resulting lemma is a valid word that represents the correct meaning of the original word.
 
-Once 
-
-This section describes the feature extraction techniques used to encode the text. 
-It is focused on the three components of text: 
-```
-1. lexical
-2. syntactic
-3. semantic
-```
-The text needs 
-For this purpose, we implemented the next feature extraction techniques:
+In order to obtain the text vectors of the corpus preprocessed we implemented the next feature extraction techniques:
 * TF-IDF
 * DOC2VEC
 * BERT
+Each of the aforementioned approaches provides a representation of the text with a particular value or information richness. This project proposes the possibility of taking advantage of such benefits through a consolidation strategy using a self-organizing map, which is illustrated in Figure 1. The idea of an eclectic representation is to get the best of various feature extraction techniques. We estimate that if instead of using a particular technique we use the three different approaches mentioned above, the result will be a richer text encoding by taking advantage of the benefits of each of the techniques that compose it.
 
-Once we have 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Prerequisites
@@ -57,6 +47,7 @@ Python 3.10.0
 
 ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Dependecies
 ```
@@ -74,3 +65,5 @@ torch==1.12.1
 transformers==4.8.1
 pickleshare==0.7.5
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
