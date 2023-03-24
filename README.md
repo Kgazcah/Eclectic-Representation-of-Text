@@ -49,7 +49,7 @@ Python 3.10.0
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Dependecies
+## Dependencies
 ```
 pandas==1.3.5
 nltk==3.8.1
