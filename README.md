@@ -27,6 +27,11 @@ It is focused on the three components of text:
 2. syntactic
 3. semantic
 ```
-
+For this purpose, we implemented the next feature extraction techniques:
+```
+* TF-IDF
+* DOC2VEC
+*BERT
+```
 
 
