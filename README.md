@@ -26,5 +26,7 @@ It is focused on the three components of text:
 (1) lexical
 (2) syntactic
 (3) semantic
+```
+
 
 
