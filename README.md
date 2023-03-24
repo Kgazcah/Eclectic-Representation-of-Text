@@ -22,6 +22,7 @@
 To process a text and obtain its vectors we need to preprocess it. To do this we implemented a set of techniques for text preprocessing based on [NLTK](https://www.nltk.org/) and [Spacy](https://spacy.io/).
 This stage may include:
 * Cleaning
+
 Cleaning undesirable symbols, exclamation points, question marks, hashtags, apostrophes, URLs, HTML tags, in some cases numbers.
 * Tokenization
 Tokenize the documents involves breaking down the phrases into words or n-grams, each of these parts is known as a token.
