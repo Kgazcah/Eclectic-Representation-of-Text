@@ -38,9 +38,7 @@ In order to obtain the text vectors of the corpus preprocessed we implemented th
 Each of the aforementioned approaches provides a representation of the text with a particular value or information richness. This project proposes the possibility of taking advantage of such benefits through a consolidation strategy using a self-organizing map, which is illustrated in Figure 1. The idea of an eclectic representation is to get the best of various feature extraction techniques. We estimate that if instead of using a particular technique we use the three different approaches mentioned above, the result will be a richer text encoding by taking advantage of the benefits of each of the techniques that compose it.
 
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  <img src="images/feature_extraction.png" alt="Logo" width="80%">
 </div>
 
 
