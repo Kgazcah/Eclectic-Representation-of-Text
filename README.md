@@ -24,23 +24,13 @@
 ## Description
 To process a text and obtain its vectors we need to preprocess it. To do this we implemented a set of techniques for text preprocessing based on [NLTK](https://www.nltk.org/) and [Spacy](https://spacy.io/).
 This stage may include:
-* Cleaning
+* Cleaning: undesirable symbols, exclamation points, question marks, hashtags, apostrophes, URLs, HTML tags, in some cases numbers.
+* Tokenization: tokenize the documents involves breaking down the phrases into words or n-grams, each of these parts is known as a token.
+* Stop words: some words that we usually use in almost all conversations do not carry much value for the purpose of a machine learning task, therefore the most convenient task is to remove them from the text corpus.
+* Stemming: is a natural language processing technique that reduces a word to its base or root form, called the "stem". This is done by removing common suffixes or prefixes from a word.
+* Lemmatization: is a natural language processing technique that involves reducing a word to its base or dictionary form, called the "lemma". Unlike stemming, lemmatization takes into account the context and the part of speech of the word to ensure that the resulting lemma is a valid word that represents the correct meaning of the original word.
 
-Cleaning undesirable symbols, exclamation points, question marks, hashtags, apostrophes, URLs, HTML tags, in some cases numbers.
-* Tokenization
-
-Tokenize the documents involves breaking down the phrases into words or n-grams, each of these parts is known as a token.
-* Stop words
-
-Some words that we usually use in almost all conversations do not carry much value for the purpose of a machine learning task, therefore the most convenient task is to remove them from the text corpus.
-* Stemming 
-
-Stemming is a natural language processing technique that reduces a word to its base or root form, called the "stem". This is done by removing common suffixes or prefixes from a word.
-* Lemmatization 
-
-Lemmatization is a natural language processing technique that involves reducing a word to its base or dictionary form, called the "lemma". Unlike stemming, lemmatization takes into account the context and the part of speech of the word to ensure that the resulting lemma is a valid word that represents the correct meaning of the original word.
-
-
+Once 
 
 This section describes the feature extraction techniques used to encode the text. 
 It is focused on the three components of text: 
@@ -57,3 +47,30 @@ For this purpose, we implemented the next feature extraction techniques:
 
 Once we have 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Prerequisites
+Python 3.X installed
+```
+python --version
+
+Python 3.10.0
+
+```
+
+
+## Dependecies
+```
+pandas==1.3.5
+nltk==3.8.1
+spacy==3.5.0
+spacy-legacy==3.0.12
+spacy-loggers==1.0.4
+spacy-spanish-lemmatizer==0.7
+PyStemmer==2.2.0.1
+gensim==4.3.0
+numpy==1.23.0
+scikit_learn==1.2.1
+torch==1.12.1
+transformers==4.8.1
+pickleshare==0.7.5
+```
