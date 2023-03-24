@@ -8,10 +8,20 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
+    <li>
+    <a href="#implementation">Implementation</a>
+    </li> 
+    <li>
+      <a href="#prerequisites">Prerequisites</a>
+    </li>
+    <li>
+    <a href="#dependencies">Dependencies</a>
+    </li> 
+    <li>
+    <a href="#authors">Authors</a>
+    </li> 
   </ol>
-  <li>
-    <a href="#description">Description</a>
-  </li>
+
 </details>
 
 <!-- ABOUT THE PROJECT -->
@@ -32,7 +42,7 @@ This stage may include:
 
 <div align="center">
   <img src="images/preprocessing.png" alt="Preprocessing" width="80%">
-  <p> Figure 1 </p>
+  <p> Figure 1. Text preprocessing. The corpus needs different preprocessing depending on the feature extraction technique used. </p>
 </div>
 
 
@@ -45,7 +55,7 @@ Each of the aforementioned approaches provides a representation of the text with
 
 <div align="center">
   <img src="images/feature_extraction.png" alt="FeatureExtraction" width="80%">
-  <p> Figure 2 </p>
+  <p> Figure 2. Feature extraction. Unstructured text data needs to be transformed into a numerical structure to be analyzed and processed. </p>
 </div>
 
 
