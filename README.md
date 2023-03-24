@@ -9,6 +9,9 @@
       <a href="#about-the-project">About The Project</a>
     </li>
   </ol>
+  <li>
+    <a href="#description">Description</a>
+  </li>
 </details>
 
 <!-- ABOUT THE PROJECT -->
@@ -53,4 +56,4 @@ For this purpose, we implemented the next feature extraction techniques:
 * BERT
 
 Once we have 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
