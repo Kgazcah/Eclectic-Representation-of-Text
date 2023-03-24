@@ -21,7 +21,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Description
+## Implementation
 To process a text and obtain its vectors we need to preprocess it. To do this we implemented a set of techniques for text preprocessing based on [NLTK](https://www.nltk.org/) and [Spacy](https://spacy.io/). The workflow in the project is illustrated in Figure 1.
 This stage may include:
 * Cleaning: undesirable symbols, exclamation points, question marks, hashtags, apostrophes, URLs, HTML tags, in some cases numbers.
@@ -78,5 +78,12 @@ torch==1.12.1
 transformers==4.8.1
 pickleshare==0.7.5
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Authors
+**Karina Yaneth Gazca Hernández**
+
+**Edwyn Javier Aldana Bobadilla**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
