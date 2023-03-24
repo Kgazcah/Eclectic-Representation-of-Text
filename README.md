@@ -31,7 +31,7 @@ For this purpose, we implemented the next feature extraction techniques:
 ```
 * TF-IDF
 * DOC2VEC
-*BERT
+* BERT
 ```
 
 
