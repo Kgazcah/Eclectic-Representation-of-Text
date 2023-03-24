@@ -19,6 +19,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
+To process a text and obtain its vectors we need to preprocess it. To do this we implemented a set of techniques for text preprocessing based on [NLTK](https://www.nltk.org/) and [Spacy](https://spacy.io/).
 
 This section describes the feature extraction techniques used to encode the text. 
 It is focused on the three components of text: 
@@ -27,9 +28,11 @@ It is focused on the three components of text:
 2. syntactic
 3. semantic
 ```
+The text needs 
 For this purpose, we implemented the next feature extraction techniques:
 * TF-IDF
 * DOC2VEC
 * BERT
 
+Once we have 
 
