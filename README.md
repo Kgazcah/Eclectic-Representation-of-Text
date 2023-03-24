@@ -23,9 +23,9 @@
 This section describes the feature extraction techniques used to encode the text. 
 It is focused on the three components of text: 
 ```
-(1) lexical
-(2) syntactic
-(3) semantic
+1. lexical
+2. syntactic
+3. semantic
 ```
 
 
