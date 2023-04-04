@@ -9,9 +9,9 @@ import pandas as pd
 import numpy as np
 
 
-dataset = pd.read_csv('dataset.csv', encoding="utf-8", sep="\t")
-#target_column = 'text'
-#corpus = dataset[target_column].to_numpy()
+dataset = pd.read_csv('dataset.csv', encoding="utf-8")
+target_column = 'review_body'
+corpus = dataset[target_column].to_numpy()
 
 # PREPROCESSING WITH SPACY
 # builder_spacy=SpecializedPreprocessorBuilder(corpus)
@@ -21,15 +21,16 @@ dataset = pd.read_csv('dataset.csv', encoding="utf-8", sep="\t")
 # print(spacy_classic_preproc_corpus.head(n=10))
 # print("El tipo de dato de spacy es", type(spacy_classic_preproc_corpus))
 
-corpus=[["Ellas también tiene que respetarse, se visten así y luego se quejan cuando les pasa algo"],
-["Si sigues con esa actitud, voy a violarte"],
-["Hice todo lo que pude por querer tenerte pero fracase, por eso te mataré"],
-["Vete a la cocina, traeme unos sanduches"],
-["Me gusta estar con ella porque sabe cocinar"],
-["Y si son escoria no es culpa mía"],
-["Jajajajajajjajajajajajajjaa ay Dios la mujer es maldad me voy de aqui, que puta pavera"],
-["Eres la mujer de mi vida"],
-["Eres la mujer de mi vida, pero eres una pendeja"]]
+#CORPUS PRUEBA
+# corpus=[["Ellas también tiene que respetarse, se visten así y luego se quejan cuando les pasa algo"],
+# ["Si sigues con esa actitud, voy a violarte"],
+# ["Hice todo lo que pude por querer tenerte pero fracase, por eso te mataré"],
+# ["Vete a la cocina, traeme unos sanduches"],
+# ["Me gusta estar con ella porque sabe cocinar"],
+# ["Y si son escoria no es culpa mía"],
+# ["Jajajajajajjajajajajajajjaa ay Dios la mujer es maldad me voy de aqui, que puta pavera"],
+# ["Eres la mujer de mi vida"],
+# ["Eres la mujer de mi vida, pero eres una pendeja"]]
 
 director=Director()
 
@@ -52,7 +53,8 @@ print(nltk_classic_preproc_bert.head())
 #ENCODING WITH TFIDF
 miObj=TFIDFEncoder(nltk_classic_preproc,target_column='text_processed')
 miObj.fit()
-tfidf_res = miObj.encode([["aqui","soy","mujer","visten","respetars"]])
+miObj.save()
+tfidf_res = miObj.encode([["no","sirve","calienta","mucho","computado"]])
 print(tfidf_res)
 tfidfEmbeddings=miObj.getEmbeddings()
 # print(tfidfEmbeddings)
@@ -62,7 +64,8 @@ tfidfEmbeddings=miObj.getEmbeddings()
 # ENCODING WITH DOC2VEC
 miObj2=Doc2VecEncoder(nltk_classic_preproc, target_column = 'text_processed', vector_size=10)
 miObj2.fit()
-doc2vec_res = miObj2.encode([["aqui","soy","mujer","visten","respetars"]])
+miObj2.save()
+doc2vec_res = miObj2.encode([["no","sirve","calienta","mucho","computado"]])
 print(doc2vec_res)
 doc2vecEmbeddings=miObj2.getEmbeddings()
 # print(doc2vecEmbeddings)
@@ -73,7 +76,8 @@ doc2vecEmbeddings=miObj2.getEmbeddings()
 # ENCODING WITH BERT
 miObj3 = BertEncoder(nltk_classic_preproc_bert, target_column = 'text_processed')
 miObj3.fit()
-bert_res = miObj3.encode([["Los migrantes son gente trabajadora"]])
+miObj3.save()
+bert_res = miObj3.encode([["No sirve la computadora se calienta mucho"]])
 print(bert_res)
 bertEmbeddings=miObj3.getEmbeddings()
 # print(bertEmbeddings)

@@ -42,7 +42,6 @@ class TFIDFEncoder(TextEncoder):
     self.embeddings = self.vectorizer.fit_transform(self.corpus[self.target_column])
     self.embeddings = self.embeddings.todense()
     self.terms = self.vectorizer.get_feature_names_out()
-    self.save()
     return 
 
   def encode(self, data, load_vectorizer_from='assets/tfidfEncoder.pkl', load_embeddings_from='assets/embeddings_tfidfEncoder.pkl'):

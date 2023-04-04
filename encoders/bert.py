@@ -57,7 +57,6 @@ class BertEncoder(TextEncoder):
     #taking out the CLS token added and turning into a dataframe to print
     self.embeddings = last_hidden_states_pred[0][:,0,:].numpy()
     self.terms = np.array(range(self.embeddings.shape[1]))
-    self.save()
 
 
   def encode(self, data, load_embeddings_from='assets/embeddings_bertEncoder.pkl', load_vectorizer_from='assets/bertEncoder.pkl', load_tokenizer_from='assets/bertTokenizer.pkl'):

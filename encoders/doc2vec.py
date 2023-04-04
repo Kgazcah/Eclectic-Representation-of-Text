@@ -43,7 +43,6 @@ class Doc2VecEncoder(TextEncoder):
     self.vectorizer.train(self.documents, total_examples=self.vectorizer.corpus_count, epochs=self.vectorizer.epochs)
     self.embeddings = self.vectorizer.dv.vectors 
     self.embeddings = pd.DataFrame(self.embeddings)
-    self.save()
     
 
   def encode(self,data,load_vectorizer_from='assets/doc2vecEncoder.pkl'):
