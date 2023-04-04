@@ -5,12 +5,11 @@ from encoders.tfidf import TFIDFEncoder
 from encoders.doc2vec import Doc2VecEncoder
 from encoders.bert import BertEncoder
 from encoders.som import SOMEncoder
-from encoders.mini_SOM import miniSOMEncoder
 import pandas as pd
 import numpy as np
 
 
-#dataset = pd.read_csv('dataset.csv', encoding="utf-8", sep="\t")
+dataset = pd.read_csv('dataset.csv', encoding="utf-8", sep="\t")
 #target_column = 'text'
 #corpus = dataset[target_column].to_numpy()
 
@@ -83,7 +82,7 @@ bertEmbeddings=miObj3.getEmbeddings()
 #Training SOM for TFIDF
 somTFIDF=SOMEncoder(latticeX=5,latticeY=5)
 somTFIDF.fit(tfidfEmbeddings)
-somTFIDF.save(save_lattice_as='assets/somTFIDFLattice.pkl',save_embeddings='assets/embeddings_tfidf.pkl')
+somTFIDF.save(save_lattice_as='assets/somTFIDFLattice.pkl')
 # somEmbeddings=som.getEmbeddings()
 # print(somEmbeddings)
 resultTFIDF=somTFIDF.encode(tfidf_res, load_lattice_from='assets/somTFIDFLattice.pkl')
