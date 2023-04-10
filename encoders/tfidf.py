@@ -7,7 +7,7 @@ import pickle
 
 class TFIDFEncoder(TextEncoder):
   
-  def __init__(self,corpus=None, target_column='text_processed', tokenizer=None, ngram_range=(1,1)):
+  def __init__(self,corpus=None, target_column='text_processed', tokenizer=None, ngram_range=(2,4)):
     """
     Parameters
     ----------
@@ -30,7 +30,7 @@ class TFIDFEncoder(TextEncoder):
     self.embeddings=None
 
     if(tokenizer==None):
-      self.vectorizer=TfidfVectorizer(tokenizer=self.token,lowercase=False)
+      self.vectorizer=TfidfVectorizer(tokenizer=self.token,lowercase=False,ngram_range=ngram_range)
     else:
       self.vectorizer=TfidfVectorizer(tokenizer=tokenizer,lowercase=False,ngram_range=ngram_range)
 

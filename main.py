@@ -42,15 +42,15 @@ print(nltk_classic_preproc.head)
 print(f'{type(nltk_classic_preproc)}')
 
 
-
-
+"""
 #PREPROCESSING FOR BERT
 builder_nltk_bert = GenericPreprocessorBuilder(corpus)
 nltk_classic_preproc_bert = director.makeBasicPreprocessor(builder_nltk_bert)
 print(nltk_classic_preproc_bert.head())
-
+"""
 
 #ENCODING WITH TFIDF
+"""
 miObj=TFIDFEncoder(nltk_classic_preproc,target_column='text_processed')
 miObj.fit()
 miObj.save()
@@ -58,11 +58,10 @@ tfidf_res = miObj.encode([["no","sirve","calienta","mucho","computado"]])
 print(tfidf_res)
 tfidfEmbeddings=miObj.getEmbeddings()
 # print(tfidfEmbeddings)
-
-
+"""
 
 # ENCODING WITH DOC2VEC
-miObj2=Doc2VecEncoder(nltk_classic_preproc, target_column = 'text_processed', vector_size=10)
+miObj2=Doc2VecEncoder(nltk_classic_preproc, target_column = 'text_processed', vector_size=100)
 miObj2.fit()
 miObj2.save()
 doc2vec_res = miObj2.encode([["no","sirve","calienta","mucho","computado"]])
@@ -72,7 +71,7 @@ doc2vecEmbeddings=miObj2.getEmbeddings()
 
 
 
-
+"""
 # ENCODING WITH BERT
 miObj3 = BertEncoder(nltk_classic_preproc_bert, target_column = 'text_processed')
 miObj3.fit()
@@ -81,7 +80,8 @@ bert_res = miObj3.encode([["No sirve la computadora se calienta mucho"]])
 print(bert_res)
 bertEmbeddings=miObj3.getEmbeddings()
 # print(bertEmbeddings)
-
+"""
+exit()
 
 #Training SOM for TFIDF
 somTFIDF=SOMEncoder(latticeX=5,latticeY=5)

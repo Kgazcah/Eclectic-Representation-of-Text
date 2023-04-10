@@ -49,7 +49,21 @@ class GenericPreprocessorBuilder(PreprocessorBuilder):
   def buildCleaner(self):
     #Eliminar números y caracteres ruidosos
     re_onlychars="[^A-Za-záéíóúÁÉÍÓÚ\s]"
-    self.corpus['text_processed']=self.corpus.text.apply(lambda x: remove_matches(x,re_onlychars,""))
+    #Eliminar URL
+    re_url="https?://[A-Za-z0-9./]+"
+    #Eliminar risas
+    re_laugh1="haha+"
+    re_laugh2="[jkl](a+h+[jkl])+"
+    #Eliminar #
+    re_hashtag="#[A-Za-z0-9]+"
+    #Eliminar @
+    re_arroba="@[A-Za-z0-9]+"
+    self.corpus['text_processed']=self.corpus.text.apply(lambda x: remove_matches(x,re_laugh1,""))
+    self.corpus['text_processed']=self.corpus['text_processed'].apply(lambda x: remove_matches(x,re_laugh2,""))
+    self.corpus['text_processed']=self.corpus['text_processed'].apply(lambda x: remove_matches(x,re_hashtag,""))
+    self.corpus['text_processed']=self.corpus['text_processed'].apply(lambda x: remove_matches(x,re_arroba,""))
+    self.corpus['text_processed']=self.corpus['text_processed'].apply(lambda x: remove_matches(x,re_url,""))
+    self.corpus['text_processed']=self.corpus['text_processed'].apply(lambda x: remove_matches(x,re_onlychars,""))
     #Lowercase
     self.corpus['text_processed']=self.corpus['text_processed'].str.lower()
     

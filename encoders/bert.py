@@ -16,7 +16,7 @@ class BertEncoder(TextEncoder):
     target_column : str, default='text_processed'
         Target column to encode
     """
-    self.corpus=corpus[:10]
+    self.corpus=corpus
     self.target_column=target_column
     self.vectorizer=None
     self.embeddings=None
