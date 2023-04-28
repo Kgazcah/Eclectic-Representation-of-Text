@@ -51,7 +51,7 @@ class SOMEncoder():
       
 
 
-    def encode(self,data,load_lattice_from='assets/somLattice.pkl'):
+    def encode(self,data, load_lattice_from='assets/somLattice.pkl'):
       self.lattice = pickle.load(open(load_lattice_from,"rb"))
       logging.debug("Type:",type(self.lattice))
       self.X=data.to_numpy()
@@ -62,14 +62,20 @@ class SOMEncoder():
         s = "{}% documents processed".format(round(i/self.X.shape[0],0)*100)
         print(s,end=len(s) * '\b')
         i=i+1
-      return result_matrix
+      self.embeddings = result_matrix
      
 
     def save(self, save_lattice_as='assets/somLattice.pkl'):
        pickle.dump(self.lattice, open(save_lattice_as, 'wb'))
        #Deallocation objects
        self.embeddings=None
-        
+    
+
+    def saveEmbeddings(self, save_embeddings_as='assets/embeddings_somEncoder.pkl'):
+      self.embeddings=pd.DataFrame(self.embeddings)
+      pickle.dump(self.embeddings, open(save_embeddings_as, "wb"))
+
+
     def projection(self, x):
       x=x.reshape(1,-1)
       image_document=np.zeros(shape=self.latticeX*self.latticeY, dtype=np.float32)
