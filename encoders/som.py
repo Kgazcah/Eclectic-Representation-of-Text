@@ -85,3 +85,6 @@ class SOMEncoder():
       image_document=image_document.reshape(self.latticeX*self.latticeY)
       return image_document
       
+    def getEmbeddings(self, load_embeddings_from='assets/embeddings.pkl'):
+      self.embeddings = pickle.load(open(load_embeddings_from,"rb"))
+      return self.embeddings

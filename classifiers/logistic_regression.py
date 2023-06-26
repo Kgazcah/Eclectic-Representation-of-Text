@@ -1,5 +1,5 @@
 from sklearn.linear_model import LogisticRegression
-from classifier_abstract import Classifier
+from classifiers.classifier_abstract import Classifier
 
 
 class LR(Classifier):

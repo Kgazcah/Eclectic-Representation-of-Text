@@ -1,5 +1,5 @@
 from sklearn.neural_network import MLPClassifier
-from classifier_abstract import Classifier
+from classifiers.classifier_abstract import Classifier
 
 
 class MLP(Classifier):

@@ -1,5 +1,5 @@
 from sklearn import svm
-from classifier_abstract import Classifier
+from classifiers.classifier_abstract import Classifier
 
 
 class SVM(Classifier):

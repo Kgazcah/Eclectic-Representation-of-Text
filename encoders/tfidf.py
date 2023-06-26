@@ -65,6 +65,11 @@ class TFIDFEncoder(TextEncoder):
 
   def save(self, save_embeddings_as='assets/embeddings_tfidfEncoder.pkl',save_vectorizer_as='assets/tfidfEncoder.pkl'):
     self.embeddings = pd.DataFrame(self.embeddings, columns=self.terms)
+    if self.embeddings.shape[1] > 1000:
+      frequecies = self.embeddings.T.sum(axis=1)
+      frequencies = frequecies.sort_values(ascending=False)
+      most_frequent = frequencies[0:1000].keys()
+      self.embeddings = self.embeddings.loc[:,most_frequent]
     pickle.dump(self.embeddings, open(save_embeddings_as, "wb"))
     pickle.dump(self.vectorizer, open(save_vectorizer_as, 'wb'))
     # Deallocation objects
