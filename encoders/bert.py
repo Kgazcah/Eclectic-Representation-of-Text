@@ -6,7 +6,7 @@ from encoders.encoder_abstract import TextEncoder
 import pickle
 
 class BertEncoder(TextEncoder):
-  def __init__(self, corpus, target_column='text_processed'):
+  def __init__(self, corpus, target_column='text_processed',max_position_embeddings=512):
     """
     Parameters
     ----------
@@ -16,6 +16,7 @@ class BertEncoder(TextEncoder):
     target_column : str, default='text_processed'
         Target column to encode
     """
+    self.max_position_embeddings = max_position_embeddings
     self.corpus=corpus
     self.target_column=target_column
     self.vectorizer=None
@@ -37,6 +38,7 @@ class BertEncoder(TextEncoder):
       l = len(i)
       if l > max_len:
         max_len = l
+        
     #padding all lists to the same size to process fastest each sentence
     padded = np.array([i + [0]*(max_len-len(i)) for i in tokenized.values])
 
@@ -44,10 +46,13 @@ class BertEncoder(TextEncoder):
     # the tokens will be 1 (0 will be ignored)
     attention_mask = np.where(padded != 0, 1, 0)
 
+    if max_len > self.max_position_embeddings:
+      padded = np.array([i[:self.max_position_embeddings] for i in padded])
+      attention_mask = attention_mask[:, :self.max_position_embeddings]
+
     #turning into a tensor instead of an array
     input_ids = torch.tensor(padded)
     attention_mask = torch.tensor(attention_mask)
-
     #Disabling gradient calculation is useful for inference, when you are sure 
     #that you will not call Tensor.backward(). It will reduce memory consumption 
     #for computations that would otherwise have requires_grad=True.
